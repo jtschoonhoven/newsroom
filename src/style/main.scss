@@ -1,0 +1,34 @@
+html body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+canvas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+/* filters */
+.grayscale { filter: grayscale(100%); }
+.sepia { filter: sepia(100%); }
+.blur { filter: blur(5px); }
+.brightness { filter: brightness(200%); }
+.contrast { filter: contrast(200%); }
+.hue-rotate { filter: hue-rotate(90deg); }
+.hue-rotate2 { filter: hue-rotate(180deg); }
+.hue-rotate3 { filter: hue-rotate(270deg); }
+.saturate { filter: saturate(200%); }
+.invert { filter: invert(100%); }
