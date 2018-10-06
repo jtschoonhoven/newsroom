@@ -6747,4 +6747,6 @@ Seriously.util.shader.snoise4d = '#ifndef NOISE4D\n' +
     '}\n' +
     '#endif\n';
 
+
 export default Seriously;
+export { seriousEffects };
