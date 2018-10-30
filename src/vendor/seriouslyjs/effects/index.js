@@ -17,7 +17,6 @@ import './seriously.select';
 import './seriously.sepia';
 import './seriously.simplex';
 import './seriously.sketch';
-import './seriously.split';
 import './seriously.temperature';
 import './seriously.throttle';
 import './seriously.tone';

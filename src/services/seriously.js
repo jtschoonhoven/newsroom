@@ -4,13 +4,7 @@ import { seriousEffects } from '../vendor/seriouslyjs/seriously';
 const NUMBER_INPUT_TYPE = 'number';
 const BOOLEAN_INPUT_TYPE = 'boolean';
 const COLOR_INPUT_TYPE = 'color';
-const ENUM_INPUT_TYPE = 'enum';
-const SETTING_TYPES = [
-    NUMBER_INPUT_TYPE,
-    BOOLEAN_INPUT_TYPE,
-    COLOR_INPUT_TYPE,
-    ENUM_INPUT_TYPE,
-];
+const SETTING_TYPES = [NUMBER_INPUT_TYPE, BOOLEAN_INPUT_TYPE, COLOR_INPUT_TYPE];
 
 
 /**

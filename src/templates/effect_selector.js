@@ -25,7 +25,7 @@ function getEffectSelectorTemplate(settings, onEffectChange) {
 
     // generate an HTML template for the <select> menu that includes <option> tags
     const effectSelectorTemplate = html`
-        <label for="fx">Choose an effect.</label>
+        <label for="fx">Choose an effect</label>
         <select id="fx" @change=${onEffectChange}>${effectOptionTemplates}</select>
     `;
 
