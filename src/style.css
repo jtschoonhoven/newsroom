@@ -9,6 +9,7 @@ html body {
 
 #controls {
     position: absolute;
+    background-color: #eee;
     z-index: 99;
 }
 
