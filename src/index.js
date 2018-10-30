@@ -25,7 +25,7 @@ let currentEffect;
 function reformat() {
     const devicePixelRatio = window.devicePixelRatio || 1;
     target.width = window.innerWidth * devicePixelRatio;
-    target.height = window.innerHeight * devicePixelRatio;
+    target.height = target.width;
     scale.width = target.width;
     scale.height = target.height;
 }
@@ -69,6 +69,8 @@ function loadEffect(effectName) {
     }
     if (currentEffect) {
         target.source.destroy();
+        currentEffect.destroy();
+        currentEffect = undefined;
     }
     if (effectName) {
         currentEffect = seriously.effect(effectName);
