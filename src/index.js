@@ -19,6 +19,7 @@ const seriously = new Seriously();
 const target = seriously.target('canvas');
 const scale = seriously.transform('reformat');
 const effectsSettings = getEffectsSettings();
+let backgroundIdx = 0;
 let currentEffect;
 
 
@@ -104,6 +105,27 @@ function renderEffectSettings(effectName) {
     const effectSettingsTemplate = getEffectSettingsTemplate(effect);
     render(effectSettingsTemplate, document.getElementById('effect-settings'));
 }
+
+
+// capture keyboard events
+window.addEventListener('keydown', (event) => {
+    // show/hide menu on "h" or "s" keydown
+    if (event.key === 'h' || event.key === 's') {
+        $('#controls').toggle();
+    }
+
+    // change background image on left/right keydown
+    else if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        // initialize if backgroundIdx is not set
+        if (event.key === 'ArrowRight') {
+            backgroundIdx += 1;
+        }
+        else if (event.key === 'ArrowLeft') {
+            backgroundIdx -= 1;
+        }
+        document.getElementById('bg').style.backgroundImage = `url(../dist/img/bg_0${backgroundIdx}.jpg)`;
+    }
+});
 
 
 /**

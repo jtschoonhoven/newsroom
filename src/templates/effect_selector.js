@@ -27,6 +27,7 @@ function getEffectSelectorTemplate(settings, onEffectChange) {
     const effectSelectorTemplate = html`
         <label for="fx">Choose an effect</label>
         <select id="fx" @change=${onEffectChange}>${effectOptionTemplates}</select>
+        <p><small>Press "s" or "h" to show/hide this menu. Use arrow keys to change the backdrop.</small></p>
     `;
 
     return effectSelectorTemplate;
