@@ -11,6 +11,7 @@ import './vendor/seriouslyjs/sources/seriously.camera';
 
 import getEffectSelectorTemplate from './templates/effect_selector';
 import getEffectSettingsTemplate from './templates/effect_settings';
+import getNewsTickerTemplate from './templates/news_ticker';
 import { getEffectsSettings } from './services/seriously';
 
 
@@ -109,9 +110,14 @@ function renderEffectSettings(effectName) {
 
 // capture keyboard events
 window.addEventListener('keydown', (event) => {
-    // show/hide menu on "h" or "s" keydown
-    if (event.key === 'h' || event.key === 's') {
+    // show/hide menu on keypress
+    if (event.key === 'm') {
         $('#controls').toggle();
+    }
+
+    // show/hide ticker on keypress
+    else if (event.key === 't') {
+        $('#ticker').toggle();
     }
 
     // change background image on left/right keydown
@@ -141,4 +147,7 @@ function onEffectChange(e) {
 
 // temporary hack to render effect selector
 const effectSelectorTemplate = getEffectSelectorTemplate(effectsSettings, onEffectChange);
+const newsTickerTemplate = getNewsTickerTemplate();
+
 render(effectSelectorTemplate, document.getElementById('effect-selector'));
+render(newsTickerTemplate, document.getElementById('ticker'));

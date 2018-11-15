@@ -28,9 +28,16 @@ function getEffectSelectorTemplate(settings, onEffectChange) {
         <label for="fx">Choose an effect</label>
         <select id="fx" @change=${onEffectChange}>${effectOptionTemplates}</select>
         <p><small>
-            Press "s" or "h" to show/hide this menu.<br/>
-            Use arrow keys to change the backdrop.
+            Press "m" to show/hide this menu.<br/>
+            Press "t" to show/hide the ticker.</br/>
+            Use arrow keys to change the backdrop (luma/chroma key).
         </small></p>
+        <textarea id="ticker-text">
+            SCIENTISTS BAFFLED BY LASERS
+            GOVERNMENT GREAT ACCORDING TO GOVERNMENT STUDY
+            WHALES ARE FISH: SCIENTISTS "WE WERE WRONG"
+            NEW RESEARCH CASTS DOUBT ON LIZARDS
+        </textarea>
     `;
 
     return effectSelectorTemplate;
