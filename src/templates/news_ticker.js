@@ -34,7 +34,7 @@ function getNewsTickerTemplate() {
         <marquee id="marquee" behavior="scroll" direction="left" scrollamount="12">
             ${getText(textSource[0])}
         </marquee>
-        <img id="logo" src="img/logo_white.png" />
+        <img id="logo" src="dist/img/logo_white.png" />
     `;
 }
 

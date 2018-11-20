@@ -130,7 +130,7 @@ window.addEventListener('keydown', (event) => {
         else if (event.key === 'ArrowLeft') {
             backgroundIdx -= 1;
         }
-        document.getElementById('bg').style.backgroundImage = `url(../dist/img/bg_0${backgroundIdx}.jpg)`;
+        document.getElementById('bg').style.backgroundImage = `url(dist/img/bg_0${backgroundIdx}.jpg)`;
     }
 });
 
