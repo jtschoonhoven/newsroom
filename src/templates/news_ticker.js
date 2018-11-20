@@ -9,22 +9,31 @@ import { html } from 'lit-html';
  */
 function getNewsTickerTemplate() {
     const textSource = $('#ticker-text');
+    const checkboxToggle = $('#ticker-toggle');
 
-    function getText() {
-        const rawText = textSource.text();
-        console.log(textSource);
-        const result = rawText.split('\n').map(line => line.trim()).join(' • ');
-        console.log(result);
+    function getText(el) {
+        const rawText = el.value;
+        const result = rawText.split('\n').map(line => line.trim().toUpperCase()).join(' • ');
+        if (!result) {
+            return 'YOUR MESSAGE HERE';
+        }
         return result;
     }
 
-    textSource.change(() => {
-        textSource.text = getText();
+    textSource.change((e) => {
+        const text = getText(e.target);
+        document.getElementById('marquee').innerHTML = text;
+    });
+
+    checkboxToggle.change((e) => {
+        document.getElementById('ticker').hidden = !e.target.checked;
     });
 
     return html`
         <h2 id="headline">BREAKING NEWS</h2>
-        <marquee id="marquee" behavior="scroll" direction="left">${getText(textSource)}</marquee>
+        <marquee id="marquee" behavior="scroll" direction="left" scrollamount="12">
+            ${getText(textSource[0])}
+        </marquee>
         <img id="logo" src="img/logo_white.png" />
     `;
 }

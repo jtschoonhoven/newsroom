@@ -4,4 +4,4 @@ dist/*
 !dist/bundle.js
 !dist/index.html
 !dist/favicon.ico
-!dist/img/*
+!dist/img/

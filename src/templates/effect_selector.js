@@ -1,6 +1,13 @@
 import { html } from 'lit-html';
 
 
+const DEFAULT_HEADLINES = `\
+SCIENTISTS BAFFLED BY LASERS
+WHALES ARE FISH: "WE WERE WRONG"
+NEW RESEARCH CASTS DOUBT ON LIZARDS\
+`;
+
+
 /**
  * Return an HTML template for the "effect selector" dropdown menu.
  * Rendering the template must be done separately.
@@ -25,19 +32,16 @@ function getEffectSelectorTemplate(settings, onEffectChange) {
 
     // generate an HTML template for the <select> menu that includes <option> tags
     const effectSelectorTemplate = html`
-        <label for="fx">Choose an effect</label>
+        <label for="fx">Select video effect</label>
         <select id="fx" @change=${onEffectChange}>${effectOptionTemplates}</select>
         <p><small>
-            Press "m" to show/hide this menu.<br/>
-            Press "t" to show/hide the ticker.</br/>
-            Use arrow keys to change the backdrop (luma/chroma key).
+            Press "Escape" to show/hide this menu.<br/>
+            Use arrows to change the backdrop for green screen.<br/>
         </small></p>
-        <textarea id="ticker-text">
-            SCIENTISTS BAFFLED BY LASERS
-            GOVERNMENT GREAT ACCORDING TO GOVERNMENT STUDY
-            WHALES ARE FISH: SCIENTISTS "WE WERE WRONG"
-            NEW RESEARCH CASTS DOUBT ON LIZARDS
-        </textarea>
+        <small><strong>Ticker text:</br></strong></small>
+        <textarea id="ticker-text">${DEFAULT_HEADLINES}</textarea>
+        <input type="checkbox" id="ticker-toggle" checked />
+        <small><strong>Show ticker</br></strong></small>
     `;
 
     return effectSelectorTemplate;

@@ -14,6 +14,12 @@ import getEffectSettingsTemplate from './templates/effect_settings';
 import getNewsTickerTemplate from './templates/news_ticker';
 import { getEffectsSettings } from './services/seriously';
 
+/*
+Welcome to the source! I hope you enjoy this project.
+This was hacked together under a deadline and is extra kludgy.
+There are a lot of worst-practices here so use caution when copy/pasting.
+*/
+
 
 // globals
 const seriously = new Seriously();
@@ -110,14 +116,11 @@ function renderEffectSettings(effectName) {
 
 // capture keyboard events
 window.addEventListener('keydown', (event) => {
-    // show/hide menu on keypress
-    if (event.key === 'm') {
-        $('#controls').toggle();
-    }
+    console.log(event);
 
-    // show/hide ticker on keypress
-    else if (event.key === 't') {
-        $('#ticker').toggle();
+    // show/hide menu
+    if (event.key === 'Escape') {
+        $('#controls').toggle();
     }
 
     // change background image on left/right keydown
@@ -147,7 +150,7 @@ function onEffectChange(e) {
 
 // temporary hack to render effect selector
 const effectSelectorTemplate = getEffectSelectorTemplate(effectsSettings, onEffectChange);
-const newsTickerTemplate = getNewsTickerTemplate();
-
 render(effectSelectorTemplate, document.getElementById('effect-selector'));
+
+const newsTickerTemplate = getNewsTickerTemplate();
 render(newsTickerTemplate, document.getElementById('ticker'));
