@@ -4,8 +4,8 @@
   "description": "Be the television you want to see in the world.",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "npx webpack",
+    "watch": "npx webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,9 @@
     "eslint-plugin-import": "^2.14.0",
     "node-sass": "^4.9.3",
     "style-loader": "^0.23.0",
-    "url-loader": "^1.1.1"
+    "url-loader": "^1.1.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",

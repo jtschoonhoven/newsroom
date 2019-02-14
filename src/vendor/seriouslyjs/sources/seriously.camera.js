@@ -78,7 +78,7 @@ Seriously.source('camera', function (source, options, force) {
             if (video.mozCaptureStream) {
                 video.mozSrcObject = stream;
             } else {
-                video.src = (URL && URL.createObjectURL(stream)) || stream;
+                video.srcObject = stream;
             }
 
             if (video.readyState) {
